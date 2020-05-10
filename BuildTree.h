@@ -1,3 +1,5 @@
+#define DATASTRUCTFINAL_BUILDTREE_H
+
 #pragma once
 #include <string>
 #include <vector>
@@ -5,25 +7,34 @@
 
 class BuildTree
 {
-private:
-
-	std::string fileName = "expression.txt";
-	std::string exp;
-
-	TreeNode* root;
-	TreeNode* previous;
 
 public:
 
-	BuildTree(std::string aFileName = " ");
-	std::vector<char> tokenize();
+    //default constructor
+    BuildTree();
 
-	void build(std::vector<char> v);
+    //constructor that gets a name file and reads in expression
+    BuildTree(std::string aFileName = " ");
 
-	TreeNode* leftParanthesis(TreeNode* newNode);
-	TreeNode* rightParanthesis();
-	TreeNode* isOperand(char item);
-	TreeNode* isOperator(char item, TreeNode* newNode);
+    //tokenize() returns a vector containing char of the expression
+    std::vector<char> tokenize();
 
-	
+
+    //build the parse tree
+    void build(std::vector<char> v);
+
+
+
+private:
+
+
+    std::string exp;
+    TreeNode* root;
+    TreeNode* parentNode;
+
+    TreeNode* currentNode;
+    int groupCount;
+
 };
+
+#endif //DATASTRUCTFINAL_BUILDTREE_H
