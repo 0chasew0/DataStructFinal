@@ -1,6 +1,4 @@
 #pragma once
-#include <string>
-#include <vector>
 #include "TreeNode.h"
 
 class BuildTree
@@ -40,8 +38,8 @@ public:
 
 private:
 
-    // Our expression string 
-    std::string exp; 
+    // Our expression string
+    std::string exp;
 
     // The root node
     TreeNode* root;
