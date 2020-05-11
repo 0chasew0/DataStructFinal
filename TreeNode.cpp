@@ -1,29 +1,17 @@
 #include "TreeNode.h"
 
-TreeNode::TreeNode()
-{
-	// Initialize the pointers
-	//leftChild = nullptr;
-	//rightCHild = nullptr;
-}
-
-/*
-// class constructor, Im not sure if we need this 
-TreeNode::TreeNode(char newItem)
-{
-	item = newItem;
-	leftChild = nullptr;
-	rightChild = nullptr;
-}
-*/
-
-
+/* These are all getters and setters except for the last function */
 void TreeNode::setItem(char anItem)
 {
 	item = anItem;
 }
 
-char TreeNode::getItem() const
+void TreeNode::setItem(std::string anItem)
+{
+	item = anItem;
+}
+
+std::string TreeNode::getItem() const
 {
 	return item;
 }
@@ -40,6 +28,11 @@ TreeNode* TreeNode::getRightChildPtr() const
 	return rightChild;
 }
 
+TreeNode* TreeNode::getParentPtr() const
+{
+	return parent;
+}
+
 void TreeNode::setLeftChildPtr(TreeNode* leftPtr)
 {
 	// Change the address of the leftChild currently point to
@@ -52,15 +45,20 @@ void TreeNode::setRightChildPtr(TreeNode* rightPtr)
 	rightChild = rightPtr;
 }
 
-TreeNode TreeNode::getLeftValue()
+void TreeNode::setParentPtr(TreeNode* parentPtr)
 {
-	// Return the value of leftChild
-	return (*leftChild);
+	parent = parentPtr;
 }
 
-TreeNode TreeNode::getRightValue()
+/* Checks if the given string/char is an operator */
+bool TreeNode::isOperator(std::string ch)
 {
-	// Return the value of rightChild
-	return (*rightChild);
+	if (ch[0] == '+' || ch[0] == '-' || ch[0] == '/' || ch[0] == '*') {
+		return true;
+	}
+
+	return false;
 }
+
+
 

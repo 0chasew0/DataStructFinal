@@ -1,5 +1,3 @@
-#define DATASTRUCTFINAL_BUILDTREE_H
-
 #pragma once
 #include <string>
 #include <vector>
@@ -10,9 +8,6 @@ class BuildTree
 
 public:
 
-    //default constructor
-    BuildTree();
-
     //constructor that gets a name file and reads in expression
     BuildTree(std::string aFileName = " ");
 
@@ -20,21 +15,38 @@ public:
     std::vector<char> tokenize();
 
 
-    //build the parse tree
-    void build(std::vector<char> v);
+    //builds the parse tree
+    TreeNode* build(std::vector<char> v);
 
+    //evaluates the parse tree
+    int evaluate(TreeNode* tree);
 
+    /* helper functions for evaluate */
+    int add(int x, int y) {
+        return x + y;
+    }
+
+    int sub(int x, int y) {
+        return x - y;
+    }
+
+    int mul(int x, int y) {
+        return x * y;
+    }
+
+    int div(int x, int y) {
+        return x / y;
+    }
 
 private:
 
+    // Our expression string 
+    std::string exp; 
 
-    std::string exp;
+    // The root node
     TreeNode* root;
-    TreeNode* parentNode;
 
+    // The current node
     TreeNode* currentNode;
-    int groupCount;
 
 };
-
-#endif //DATASTRUCTFINAL_BUILDTREE_H
