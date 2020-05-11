@@ -1,39 +1,43 @@
 #pragma once
+#include <iostream>
+#include <iterator>
+#include <fstream>
 #include <string>
+#include <vector>
 
 class TreeNode {
 private:
-	std::string item; // The item stored in the node
-	TreeNode* leftChild; // The left child of the node
-	TreeNode* rightChild; // The right child of the node
-	TreeNode* parent; // The parent of the node so that we don't lose nodes the further down we go
+    std::string item; // The item stored in the node
+    TreeNode* leftChild; // The left child of the node
+    TreeNode* rightChild; // The right child of the node
+    TreeNode* parent; // The parent of the node so that we don't lose nodes the further down we go
 
 public:
-	
-	// Set the value of class memeber : item
-	void setItem(char anItem);
-	void setItem(std::string anItem);
-	
-	// Get the value of item, does no have implementation yet
-	std::string getItem() const;
-	
-	// Return the address of leftChild point to
-	TreeNode* getLeftChildPtr() const;
 
-	// Return the address of rightChild point to
-	TreeNode* getRightChildPtr() const;
+    // Set the value of class member : item
+    void setItem(char anItem);
+    void setItem(std::string anItem);
 
-	TreeNode* getParentPtr() const;
-	
-	// leftChild -> leftPtr, leftChild now point to the address of leftPtr pointing to
-	void setLeftChildPtr(TreeNode* leftPtr);
+    // Get the value of item, does no have implementation yet
+    std::string getItem() const;
 
-	// rightChild -> rightPtr, rightChild now point to the address of rightPtr pointing to
-	void setRightChildPtr(TreeNode* rightPtr);
+    // Return the address of leftChild point to
+    TreeNode* getLeftChildPtr() const;
 
-	void setParentPtr(TreeNode* parentPtr);
+    // Return the address of rightChild point to
+    TreeNode* getRightChildPtr() const;
 
-	// Helper function 
-	bool isOperator(std::string ch);
+    TreeNode* getParentPtr();
+
+    // leftChild -> leftPtr, leftChild now point to the address of leftPtr pointing to
+    void setLeftChildPtr(TreeNode* leftPtr);
+
+    // rightChild -> rightPtr, rightChild now point to the address of rightPtr pointing to
+    void setRightChildPtr(TreeNode* rightPtr);
+
+    void setParentPtr(TreeNode* parentPtr);
+
+    // Helper function
+    bool isOperator(std::string ch);
 
 };
