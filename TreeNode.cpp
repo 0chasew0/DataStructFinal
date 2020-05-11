@@ -7,8 +7,6 @@ TreeNode::TreeNode()
 	//rightCHild = nullptr;
 }
 
-
-
 /*
 // class constructor, Im not sure if we need this 
 TreeNode::TreeNode(char newItem)
@@ -17,8 +15,8 @@ TreeNode::TreeNode(char newItem)
 	leftChild = nullptr;
 	rightChild = nullptr;
 }
-
 */
+
 
 void TreeNode::setItem(char anItem)
 {
@@ -54,14 +52,13 @@ void TreeNode::setRightChildPtr(TreeNode* rightPtr)
 	rightChild = rightPtr;
 }
 
-TreeNode::getLeftValue()
+TreeNode TreeNode::getLeftValue()
 {
 	// Return the value of leftChild
 	return (*leftChild);
 }
 
-
-TreeNode::getRightValue()
+TreeNode TreeNode::getRightValue()
 {
 	// Return the value of rightChild
 	return (*rightChild);

@@ -20,11 +20,13 @@ public:
 	
 	// Return the address of leftChild point to
 	TreeNode* getLeftChildPtr() const;
+
 	// Return the address of rightChild point to
 	TreeNode* getRightChildPtr() const;
 	
 	// leftChild -> leftPtr, leftChild now point to the address of leftPtr pointing to
 	void setLeftChildPtr(TreeNode* leftPtr);
+
 	// rightChild -> rightPtr, rightChild now point to the address of rightPtr pointing to
 	void setRightChildPtr(TreeNode* rightPtr);
 	
